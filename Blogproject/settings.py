@@ -19,7 +19,7 @@ SECRET_KEY = 'django-insecure-change-this-key'
 DEBUG = True
 
 # Read ALLOWED_HOSTS from environment variable
-ALLOWED_HOSTS = ['blog-project-e2gn.onrender.com']
+ALLOWED_HOSTS = ['blog-project-e2gn.onrender.com','127.0.0.1']
 
 
 
@@ -44,6 +44,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 
@@ -107,7 +108,8 @@ USE_TZ = True
 
 # STATIC FILES (VERY IMPORTANT FOR YOUR BG ISSUE)
 STATIC_URL = 'static/'
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = [
    "/Blog/static/blog/",
 ]
