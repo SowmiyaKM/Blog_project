@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os 
 
 # BASE DIR
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -17,7 +18,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-change-this-key'
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+# Read ALLOWED_HOSTS from environment variable
+ALLOWED_HOSTS = ['blog-project-e2gn.onrender.com']
+
 
 
 # APPLICATIONS
