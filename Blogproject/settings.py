@@ -73,15 +73,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Blogproject.wsgi.application'
 
 
-# DATABASE (SQLite)
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql.connector.django',
-        'NAME': 'blog',
-        'USER': 'root',
-        'PASSWORD':'kmsowmiya12$',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
