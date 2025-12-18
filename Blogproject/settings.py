@@ -11,8 +11,6 @@ from pathlib import Path
 import os 
 import dj_database_url
 
-
-
 # BASE DIR
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -148,14 +146,3 @@ LOGGING = {
 }
 
 
-if os.environ.get("RENDER"):
-    try:
-        from django.contrib.auth.models import User
-        if not User.objects.filter(username="admin").exists():
-            User.objects.create_superuser(
-                username="admin",
-                email="admin@example.com",
-                password="admin123"
-            )
-    except Exception:
-        pass
